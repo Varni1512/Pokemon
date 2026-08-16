@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-primary-bg: var(--primary-bg);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-card-bg: var(--card-bg);
+  --color-elevated-card: var(--elevated-card);
+  --color-border-subtle: var(--border-subtle);
+  
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-highlight: var(--accent-highlight);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-type-normal: var(--type-normal);
+  --color-type-fire: var(--type-fire);
+  --color-type-water: var(--type-water);
+  --color-type-grass: var(--type-grass);
+  --color-type-electric: var(--type-electric);
+  --color-type-ice: var(--type-ice);
+  --color-type-fighting: var(--type-fighting);
+  --color-type-poison: var(--type-poison);
+  --color-type-ground: var(--type-ground);
+  --color-type-flying: var(--type-flying);
+  --color-type-psychic: var(--type-psychic);
+  --color-type-bug: var(--type-bug);
+  --color-type-rock: var(--type-rock);
+  --color-type-ghost: var(--type-ghost);
+  --color-type-dragon: var(--type-dragon);
+  --color-type-dark: var(--type-dark);
+  --color-type-steel: var(--type-steel);
+  --color-type-fairy: var(--type-fairy);
+}
+
+:root {
+  /* Light theme (default mapping, but dark is default) */
+  --primary-bg: #F8FAFC;
+  --secondary-bg: #F1F5F9;
+  --card-bg: #FFFFFF;
+  --elevated-card: #FFFFFF;
+  --border-subtle: rgba(0,0,0,0.08);
+  
+  --accent-primary: #EF4444; /* Red accent from image */
+  --accent-secondary: #DC2626;
+  --accent-highlight: #F87171;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+
+  /* Type Colors */
+  --type-normal: #9CA3AF;
+  --type-fire: #F97316;
+  --type-water: #3B82F6;
+  --type-grass: #22C55E;
+  --type-electric: #EAB308;
+  --type-ice: #06B6D4;
+  --type-fighting: #EF4444;
+  --type-poison: #A855F7;
+  --type-ground: #D97706;
+  --type-flying: #8B5CF6;
+  --type-psychic: #EC4899;
+  --type-bug: #84CC16;
+  --type-rock: #A8A29E;
+  --type-ghost: #6366F1;
+  --type-dragon: #8B5CF6;
+  --type-dark: #374151;
+  --type-steel: #64748B;
+  --type-fairy: #F472B6;
+}
+
+[data-theme='dark'] {
+  --primary-bg: #171827;
+  --secondary-bg: #1C1D30;
+  --card-bg: #0E0F18;
+  --elevated-card: #1C1D30;
+  --border-subtle: #242638;
+  
+  --accent-primary: #FF3B30;
+  --accent-secondary: #DC2626;
+  --accent-highlight: #F87171;
+
+  --text-primary: #F5F5F7;
+  --text-secondary: #8A8C9E;
+  --text-muted: #70738D;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hide scrollbar for horizontal scrolling elements */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
