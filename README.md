@@ -45,11 +45,43 @@ This project directly integrates with [PokéAPI](https://pokeapi.co/):
 
 ## Project Structure
 
-- `src/app`: Next.js App Router structure (`page.tsx`, `layout.tsx`, dynamic routes).
-- `src/components`: Reusable UI components grouped by feature (`pokemon/`, `ui/`, `layout/`).
-- `src/hooks`: Custom React hooks (`usePokemonList`, `useFavorites`, `useCompare`) for clean state management.
-- `src/services`: API abstraction layer (`pokeApi.ts`).
-- `src/types`: TypeScript interfaces for the API payloads and UI data models.
+```text
+Pokémon Explorer/
+├── public/                 # Static assets (icons, images)
+├── src/
+│   ├── app/                # Next.js 14 App Router
+│   │   ├── compare/        # Compare Pokémon feature page
+│   │   ├── pokemon/        # Pokémon details dynamic routes
+│   │   ├── globals.css     # Global styles and Tailwind v4 imports
+│   │   ├── layout.tsx      # Root layout with Theme providers
+│   │   └── page.tsx        # Home page / Pokémon listing
+│   ├── components/         # Reusable React components
+│   │   ├── layout/         # Layout components (Header, Hero)
+│   │   ├── pokemon/        # Feature-specific components (Cards, Filters)
+│   │   └── ui/             # Core UI components (Buttons, Skeletons, ThemeToggle)
+│   ├── constants/          # Application constants (e.g., Pokémon types)
+│   ├── hooks/              # Custom React hooks
+│   │   ├── useCompare.ts   # Logic for Pokémon comparison feature
+│   │   ├── useFavorites.ts # Client-side LocalStorage state management
+│   │   └── usePokemonList.ts # API fetching, caching, and pagination
+│   ├── lib/                # Utility functions
+│   │   └── utils.ts        # Helper functions (e.g., class merging)
+│   ├── services/           # API integration layer
+│   │   └── pokeApi.ts      # Fetch methods for PokéAPI endpoints
+│   └── types/              # TypeScript type definitions
+│       └── pokemon.ts      # Interfaces for state and API responses
+├── eslint.config.mjs       # ESLint configuration
+├── next.config.ts          # Next.js configuration
+├── postcss.config.mjs      # PostCSS configuration
+└── tsconfig.json           # TypeScript configuration
+```
+
+## Architecture & Design Decisions
+
+- **Feature-Driven Component Design**: Components are modularized by feature (e.g., `pokemon/`, `layout/`) rather than flat structures. This ensures scalability as the application grows.
+- **Separation of Concerns (SoC)**: Business logic and state management are abstracted into custom React hooks (`src/hooks`), keeping the UI components purely presentational and easy to test.
+- **Service Layer Pattern**: All PokéAPI integrations are isolated in `src/services/pokeApi.ts`. This decouples the UI from the network layer, making it easier to mock during testing or swap endpoints in the future.
+- **Strict Typing**: Comprehensive TypeScript interfaces (`src/types`) are used for both API payloads and internal state, ensuring end-to-end type safety and reducing runtime errors.
 
 ## Challenges Faced
 
