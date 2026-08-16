@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Red Top -->
+  <path d="M 32 2 A 30 30 0 0 1 62 32 L 2 32 A 30 30 0 0 1 32 2 Z" fill="#EF4444" />
+  
+  <!-- White Bottom -->
+  <path d="M 2 32 L 62 32 A 30 30 0 0 1 32 62 A 30 30 0 0 1 2 32 Z" fill="#FFFFFF" />
+  
+  <!-- Outer Border -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#10141E" stroke-width="4" />
+  
+  <!-- Horizontal Center Line (minus the circle) -->
+  <line x1="2" y1="32" x2="22" y2="32" stroke="#10141E" stroke-width="4" />
+  <line x1="42" y1="32" x2="62" y2="32" stroke="#10141E" stroke-width="4" />
+  
+  <!-- Center Circle Button -->
+  <circle cx="32" cy="32" r="10" fill="#FFFFFF" stroke="#10141E" stroke-width="4" />
+  <circle cx="32" cy="32" r="4" fill="#FFFFFF" stroke="#10141E" stroke-width="2" />
+</svg>
