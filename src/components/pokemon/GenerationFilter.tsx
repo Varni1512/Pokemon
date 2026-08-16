@@ -20,7 +20,7 @@ export function GenerationFilter({ selectedGen, onSelectGen, isLoading }: Genera
           return (
             <button
               key={gen.id}
-              onClick={() => onSelectGen(gen.id)}
+              onClick={() => onSelectGen(isSelected ? 'all' : gen.id)}
               disabled={isLoading}
               className={cn(
                 "cursor-pointer px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 hover:scale-105 active:scale-95",

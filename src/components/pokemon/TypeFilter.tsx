@@ -20,7 +20,7 @@ export function TypeFilter({ selectedType, onSelectType, isLoading }: TypeFilter
           return (
             <button
               key={type}
-              onClick={() => onSelectType(selectedType === type ? 'all' : type)}
+              onClick={() => onSelectType(isSelected ? 'all' : type)}
               disabled={isLoading}
               className={cn(
                 "cursor-pointer px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-200 shadow-sm hover:scale-105 active:scale-95",
